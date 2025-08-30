@@ -1,0 +1,245 @@
+/* --- Estilos generales --- */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.fondo-pagina {
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #2c2c54, #24243e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.contenedor-principal {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* --- Estilos intro (los insultos previos) --- */
+.intro-titulo {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #ff4d6d;
+  text-shadow: 2px 2px 8px black;
+}
+
+.intro-texto {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.boton-mensaje {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: #ff4d6d;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.boton-mensaje:hover {
+  background: #ff1e50;
+  transform: scale(1.05);
+}
+
+/* --- FELICITACIÓN FINAL --- */
+.felicitacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Nota central */
+.nota {
+  background: #fffbea;
+  color: #2c2c54;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  text-align: center;
+  animation: aparecer 1s ease forwards;
+}
+
+.felicitacion-titulo {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.felicitacion-texto {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Galería de fotos alrededor */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.galeria img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+.felicitacion-circular {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #2c2c54, #24243e);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Nota en el centro */
+.nota-central {
+  position: relative;
+  background: #fffbea;
+  color: #2c2c54;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+  width: 350px; /* Fijo ancho */
+  max-height: 350px; /* Limite alto */
+  overflow-y: auto; /* Scroll si el texto es muy largo */
+  text-align: center;
+  z-index: 10;
+  animation: aparecer 1s ease forwards;
+}
+
+.felicitacion-titulo {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.felicitacion-texto {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left; /* Mejor lectura */
+}
+
+/* Fotos alrededor */
+.foto {
+  position: absolute;
+  width: 200px; /* más grandes */
+  height: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  z-index: 5;
+}
+
+.foto:hover {
+  transform: scale(1.1);
+}
+
+/* Posiciones alrededor de la nota */
+.foto1 {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.foto2 {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.foto3 {
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.foto4 {
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.foto5 {
+  top: 12%;
+  left: 12%;
+}
+.foto6 {
+  bottom: 12%;
+  right: 12%;
+}
+
+/* Animación */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .foto {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nota-central {
+    max-width: 300px;
+    padding: 20px;
+  }
+
+  .felicitacion-titulo {
+    font-size: 1.4rem;
+  }
+
+  .felicitacion-texto {
+    font-size: 1rem;
+  }
+
+  .foto {
+    width: 100px;
+    height: 100px;
+  }
+
+  .foto1 {
+    top: 2%;
+  }
+  .foto2 {
+    bottom: 2%;
+  }
+  .foto3 {
+    left: 2%;
+  }
+  .foto4 {
+    right: 2%;
+  }
+}

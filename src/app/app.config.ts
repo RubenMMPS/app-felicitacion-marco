@@ -1,8 +1,12 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, Routes } from '@angular/router';
+import { FelicitacionMarcoComponent } from './felicitacion-marco/felicitacion-marco.component';
 
-import { routes } from './app.routes';
+const routes: Routes = [{ path: '', component: FelicitacionMarcoComponent }];
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes)]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+  ],
 };
