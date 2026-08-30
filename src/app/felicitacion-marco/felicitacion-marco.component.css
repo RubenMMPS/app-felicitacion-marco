@@ -1,9 +1,12 @@
-/* --- Estilos generales --- */
 html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  min-height: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .fondo-pagina {
@@ -16,100 +19,117 @@ body {
   color: white;
   font-family: "Comic Sans MS", cursive, sans-serif;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 .contenedor-principal {
-  text-align: center;
-  max-width: 800px;
-  width: 100%;
+  width: min(900px, 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* --- Estilos intro (los insultos previos) --- */
+.quiz-card {
+  width: 100%;
+  max-width: 760px;
+  background: rgba(16, 17, 40, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  text-align: center;
+}
+
+.quiz-header {
+  margin-bottom: 20px;
+}
+
+.step-indicator {
+  display: inline-block;
+  padding: 8px 14px;
+  background: rgba(255, 77, 109, 0.15);
+  border: 1px solid rgba(255, 77, 109, 0.5);
+  border-radius: 999px;
+  color: #ffd6de;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
 .intro-titulo {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 1.25rem;
+  margin: 0;
   color: #ff4d6d;
   text-shadow: 2px 2px 8px black;
 }
 
-.intro-texto {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.pregunta {
+  font-size: 1.25rem;
+  margin: 24px 0 28px;
+  line-height: 1.4;
+  color: #fff;
 }
 
-.boton-mensaje {
-  padding: 10px 20px;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 10px;
-  background: #ff4d6d;
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.boton-mensaje:hover {
-  background: #ff1e50;
-  transform: scale(1.05);
-}
-
-/* --- FELICITACIÓN FINAL --- */
-.felicitacion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-
-/* Nota central */
-.nota {
-  background: #fffbea;
-  color: #2c2c54;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
-  text-align: center;
-  animation: aparecer 1s ease forwards;
-}
-
-.felicitacion-titulo {
-  font-size: 2rem;
-  margin-bottom: 15px;
-}
-
-.felicitacion-texto {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-/* Galería de fotos alrededor */
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 15px;
+.question-image {
   width: 100%;
-  max-width: 800px;
-}
-
-.galeria img {
-  width: 100%;
-  border-radius: 10px;
+  max-height: 260px;
   object-fit: cover;
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s;
+  border-radius: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
 }
 
-.galeria img:hover {
-  transform: scale(1.05);
+.opciones {
+  display: grid;
+  gap: 16px;
+}
+
+.opcion {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  border-radius: 16px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  padding: 16px 18px;
+  text-align: left;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.opcion:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 77, 109, 0.6);
+}
+
+.mensaje {
+  margin-top: 24px;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.mensaje-correcto {
+  background: rgba(40, 167, 69, 0.15);
+  border-color: rgba(40, 167, 69, 0.45);
+  color: #d7f9dc;
+}
+
+.mensaje-error {
+  background: rgba(220, 53, 69, 0.15);
+  border-color: rgba(220, 53, 69, 0.45);
+  color: #ffd7dc;
 }
 
 .felicitacion-circular {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(135deg, #2c2c54, #24243e);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -118,20 +138,40 @@ body {
   box-sizing: border-box;
 }
 
-/* Nota en el centro */
 .nota-central {
   position: relative;
-  background: #fffbea;
+  background: white;
   color: #2c2c54;
-  padding: 25px;
+  padding: 25px 25px 18px;
   border-radius: 20px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
-  width: 350px; /* Fijo ancho */
-  max-height: 350px; /* Limite alto */
-  overflow-y: auto; /* Scroll si el texto es muy largo */
+  width: 350px;
+  max-height: 350px;
+  overflow-y: auto;
   text-align: center;
   z-index: 10;
   animation: aparecer 1s ease forwards;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.nota-central::after {
+  content: "↓ desliza hacia abajo";
+  position: sticky;
+  bottom: 0;
+  display: block;
+  margin-top: 10px;
+  padding-top: 8px;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #7a6456;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 251, 234, 0) 0%,
+    rgba(255, 251, 234, 0.9) 35%,
+    rgba(255, 251, 234, 1) 100%
+  );
 }
 
 .felicitacion-titulo {
@@ -142,13 +182,13 @@ body {
 .felicitacion-texto {
   font-size: 1rem;
   line-height: 1.4;
-  text-align: left; /* Mejor lectura */
+  text-align: left;
+  white-space: pre-line;
 }
 
-/* Fotos alrededor */
 .foto {
   position: absolute;
-  width: 200px; /* más grandes */
+  width: 200px;
   height: 200px;
   border-radius: 20px;
   object-fit: cover;
@@ -161,37 +201,13 @@ body {
   transform: scale(1.1);
 }
 
-/* Posiciones alrededor de la nota */
-.foto1 {
-  top: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.foto2 {
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.foto3 {
-  left: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.foto4 {
-  right: 5%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.foto5 {
-  top: 12%;
-  left: 12%;
-}
-.foto6 {
-  bottom: 12%;
-  right: 12%;
-}
+.foto1 { top: 5%; left: 50%; transform: translateX(-50%); }
+.foto2 { bottom: 5%; left: 50%; transform: translateX(-50%); }
+.foto3 { left: 5%; top: 50%; transform: translateY(-50%); }
+.foto4 { right: 5%; top: 50%; transform: translateY(-50%); }
+.foto5 { top: 12%; left: 12%; }
+.foto6 { bottom: 12%; right: 12%; }
 
-/* Animación */
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -203,7 +219,6 @@ body {
   }
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
   .foto {
     width: 150px;
@@ -212,13 +227,17 @@ body {
 }
 
 @media (max-width: 768px) {
+  .quiz-card {
+    padding: 24px 18px;
+  }
+
   .nota-central {
     max-width: 300px;
     padding: 20px;
   }
 
   .felicitacion-titulo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .felicitacion-texto {
@@ -230,16 +249,8 @@ body {
     height: 100px;
   }
 
-  .foto1 {
-    top: 2%;
-  }
-  .foto2 {
-    bottom: 2%;
-  }
-  .foto3 {
-    left: 2%;
-  }
-  .foto4 {
-    right: 2%;
-  }
+  .foto1 { top: 2%; }
+  .foto2 { bottom: 2%; }
+  .foto3 { left: 2%; }
+  .foto4 { right: 2%; }
 }

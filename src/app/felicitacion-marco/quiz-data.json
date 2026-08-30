@@ -1,0 +1,178 @@
+{
+  "introTitle": "Antes de felicitarte debemos comprobar algo. Completa este sencillo test.",
+  "questions": [
+    {
+      "id": "q1",
+      "prompt": "¿Que raza aún no ha salido con Natalia?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Española",
+          "message": "Y el borracho de Andrés que? a ver si el borracho vas a ser tú...",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Gitana",
+          "message": "Ay por la raza que tonto eres. Que un payo se haga paté con tu hígado y se lo eche al bocata para el pádel",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Venezolana",
+          "message": "Como no te vas a acordar de Josito? el chaval que entrena todo el cuerpo excepto el cerebro",
+          "isCorrect": false
+        },
+        {
+          "id": "d",
+          "label": "Colombiana",
+          "message": "Si te soy sincero no me acuerdo si Josito era Venezolano o Colombiano asiq sea como sea bien hecho👍",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "prompt": "¿Quien es esta persona?",
+      "image": "assets/fotos/norris.jpg",
+      "options": [
+        {
+          "id": "a",
+          "label": "El mejor corredor de la f1",
+          "message": "Estas bien amiguete? Vamos no me jodas",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Un mariconcete",
+          "message": "No explanation is needed here.",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "El hijo de Fernando Alonso",
+          "message": "Ese es Hamilton",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "prompt": "¿Si salimos que alcohol compramos?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Vodka",
+          "message": "Es buena pero no la mejor opción",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Puerto de Indias",
+          "message": "También quieres una faldita ya que estas?",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Jagger",
+          "message": "Eso es my brother",
+          "isCorrect": true
+        },
+        {
+          "id": "c",
+          "label": "Ginebra",
+          "message": "Me corto la polla antes de beber esa mierda con sabor a perfume",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Ron",
+          "message": "Eso es my brother",
+          "isCorrect": true
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "prompt": "¿Quién es el mejor Spiderman?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Tobey Maguire",
+          "message": "El OG, es válido pero para mi no",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Andrew Garfield ",
+          "message": "El que tenía más potencial pero le jodieron",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Tom Holland",
+          "message": "Él único que ha sobrevivido un tiro de un barret, la cabra en mis libros",
+          "isCorrect": true
+        },
+        {
+          "id": "d",
+          "label": "Miles Morales",
+          "message": "Fake Fan",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "prompt": "¿Qué es lo más probable?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Que me coma una traba",
+          "message": "Vivimos en tiempos dificiles, a win is a win",
+          "isCorrect": true
+        },
+        {
+          "id": "b",
+          "label": "Que me presentes a una amiga",
+          "message": "No lo has hecho en los últimos 5 años que llevamos juntos lo vas a hacer ahora mongolo",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Que dejes de ser un putero",
+          "message": "No necesitamos mentir a nadie Marco",
+          "isCorrect": false
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "prompt": "¿Quien es más guapo?",
+      "options": [
+        {
+          "id": "a",
+          "label": "Tú",
+          "message": "Vamos no me jodas",
+          "isCorrect": false
+        },
+        {
+          "id": "b",
+          "label": "Yo",
+          "message": "Correcto pero por pelota no me sale de la polla ponertela correcta",
+          "isCorrect": false
+        },
+        {
+          "id": "c",
+          "label": "Losh dosh",
+          "message": "Bien ahí el bicho, Siuuuuuuuu",
+          "isCorrect": true
+        }
+      ]
+    }
+  ],
+  "final": {
+    "title": "🎉 ¡Feliz Cumpleaños! 🎉",
+    "text": "Otro año al lado del único chaval con el que cuando estoy con él pienso que no soy tan tonto. Nustra amistad es como cuando te comes una gorda, por mucho tiempo que pase no te vas a olvidar de ello y eso es lo bonito, aunque pasen meses sin vernos aún nos queremos. Aunque también es como un panchitillo, por mucho que llueva o granice él te va a seguir llevando el pedido de globo, al igual que nosotros nos vamos a seguir insultando. Me alegro de tenerte como amigo y que podamos salir y emborracharnos juntos, que por cierto ya toca. Muchas felicidades y pasatelo bien en tú dia campeón ❤️"
+  }
+}

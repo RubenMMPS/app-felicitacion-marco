@@ -1,88 +1,51 @@
 <div class="fondo-pagina">
   <div class="contenedor-principal">
-    <div *ngIf="contadorPag == 0" class="intro">
-      <h1 class="intro-titulo">CaraPolla</h1>
-      <p class="intro-texto">
-        De verdad te creíste que te había hecho una felicitación chaval?
-        Espabila anda
+    <div *ngIf="!isComplete" class="quiz-card">
+      <div class="quiz-header">
+        <span class="step-indicator">Pregunta {{ currentStepNumber }}/{{ totalQuestions }}</span>
+        <h1 class="intro-titulo" *ngIf="currentStepNumber==1">{{ quizData.introTitle }}</h1>
+      </div>
+
+      <h2 class="pregunta">{{ currentQuestion.prompt }}</h2>
+
+      <img
+        *ngIf="currentQuestion.image"
+        [src]="currentQuestion.image"
+        alt="Pregunta adicional"
+        class="question-image"
+      />
+
+      <div class="opciones">
+        <button
+          *ngFor="let option of currentQuestion.options"
+          type="button"
+          class="opcion"
+          (click)="handleAnswer(option)"
+        >
+          {{ option.label }}
+        </button>
+      </div>
+
+      <p
+        *ngIf="feedbackMessage"
+        class="mensaje"
+        [ngClass]="{ 'mensaje-correcto': lastAnswerCorrect, 'mensaje-error': lastAnswerCorrect === false }"
+      >
+        {{ feedbackMessage }}
       </p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
     </div>
 
-    <div *ngIf="contadorPag == 1" class="intro">
-      <h1 class="intro-titulo">TontoPolla</h1>
-      <p class="intro-texto">PARA, AQUÍ NO HAY NADA.</p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
+    <div *ngIf="isComplete" class="felicitacion-circular">
+      <img src="assets/fotos/foto7.jpg" alt="Amigo" class="foto foto1" />
+      <img src="assets/fotos/foto6.jpg" alt="Amigo" class="foto foto2" />
+      <img src="assets/fotos/foto2.jpg" alt="Amigo" class="foto foto3" />
+      <img src="assets/fotos/foto1.jpg" alt="Amigo" class="foto foto4" />
+      <img src="assets/fotos/foto4.jpg" alt="Amigo" class="foto foto5" />
+      <img src="assets/fotos/foto3.jpg" alt="Amigo" class="foto foto6" />
 
-    <div *ngIf="contadorPag == 2" class="intro">
-      <h1 class="intro-titulo">PollaGorda</h1>
-      <p class="intro-texto">QUE PARES HE DICHO.</p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
-
-    <div *ngIf="contadorPag == 3" class="intro">
-      <h1 class="intro-titulo">Cabezón</h1>
-      <p class="intro-texto">MADRE MÍA QUE PESADO...</p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
-
-    <div *ngIf="contadorPag == 4" class="intro">
-      <h1 class="intro-titulo">Energúmeno</h1>
-      <p class="intro-texto">NO TE ABURRES?</p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
-
-    <div *ngIf="contadorPag == 5" class="intro">
-      <h1 class="intro-titulo">Estupido</h1>
-      <p class="intro-texto">TE VAS A ARREPENTIR DE ESTO, HAZME CASO.</p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
-
-    <div *ngIf="contadorPag == 6" class="intro">
-      <h1 class="intro-titulo">Maricón</h1>
-      <p class="intro-texto">
-        LA PUTA MADRE QUE TE PARIÓ MARICÓN DE MIERDA ESTE ES EL ÚLTIMO AVISO QUE
-        TE DOY.
-      </p>
-      <button class="boton-mensaje" (click)="contadorPag = contadorPag + 1">
-        No Pulsar
-      </button>
-    </div>
-
-    <!-- FELICITACIÓN FINAL -->
-    <div *ngIf="contadorPag == 7" class="felicitacion-circular">
-      <!-- Fotos alrededor -->
-      <img src="assets/fotos/foto1.jpg" alt="Amigo" class="foto foto1" />
-      <img src="assets/fotos/foto2.jpg" alt="Amigo" class="foto foto2" />
-      <img src="assets/fotos/foto3.jpg" alt="Amigo" class="foto foto3" />
-      <img src="assets/fotos/foto4.jpg" alt="Amigo" class="foto foto4" />
-      <img src="assets/fotos/foto5.jpg" alt="Amigo" class="foto foto5" />
-      <img src="assets/fotos/foto6.jpg" alt="Amigo" class="foto foto6" />
-
-      <!-- Nota central -->
       <div class="nota-central">
-        <h1 class="felicitacion-titulo">🎉 ¡Feliz Cumpleaños máquina! 🎉</h1>
-        <p class="felicitacion-texto">
-          Me da rabia porq no hemos quedado nada, hecho de menos beber contigo
-          bro. Siento q nos estamos distanciando y no se q hacer.Pero bueno
-          felicidades campeón, te deseo lo mejor porq te lo mereces y eres un
-          tio de 10 quitando que simepre llegas tarde capullo.Y por cierto aún
-          tenemos un Jagger-Redbull pendiente amiguete. Disfruta de tu día
-          bebe❤️.
-        </p>
+        <h1 class="felicitacion-titulo">{{ quizData.final.title }}</h1>
+        <p class="felicitacion-texto">{{ quizData.final.text }}</p>
       </div>
     </div>
   </div>
